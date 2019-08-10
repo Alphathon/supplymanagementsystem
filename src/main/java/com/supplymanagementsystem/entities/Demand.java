@@ -22,7 +22,7 @@ public class Demand {
 	@Column(name = "secondary_skill")
 	private String secondarySkill;
 	@Column(name = "experience")
-	private String experience;
+	private int experience;
 	@Column(name = "location")
 	private String location;
 	@Column(name = "status")
@@ -60,11 +60,11 @@ public class Demand {
 		this.secondarySkill = secondarySkill;
 	}
 
-	public String getExperience() {
+	public int getExperience() {
 		return experience;
 	}
 
-	public void setExperience(String experience) {
+	public void setExperience(int experience) {
 		this.experience = experience;
 	}
 
