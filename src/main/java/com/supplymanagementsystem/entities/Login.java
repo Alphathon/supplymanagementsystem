@@ -1,25 +1,41 @@
 package com.supplymanagementsystem.entities;
 
-import org.springframework.data.annotation.Id;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "login_users")
 public class Login {
-	
+
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "ID")
 	private long ID;
-
-	@Column()
-	private String username;
-
+	@Column(name = "user_name")
+	private String userName;
+	@Column(name = "password")
 	private String password;
-
+	@Column(name = "role")
 	private String role;
 
-	public String getUsername() {
-		return username;
+	public long getID() {
+		return ID;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setID(long iD) {
+		ID = iD;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public String getPassword() {
@@ -40,7 +56,7 @@ public class Login {
 
 	@Override
 	public String toString() {
-		return "Login [username=" + username + ", password=" + password + ", role=" + role + "]";
+		return "Login [ID=" + ID + ", userName=" + userName + ", password=" + password + ", role=" + role + "]";
 	}
 
 }
